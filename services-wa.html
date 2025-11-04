@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WA Sender - WhatsApp Marketing Software | AsliBoosts</title>
+  <meta name="description" content="Professional WhatsApp marketing software for bulk messaging, group number extraction, and automated replies. Complete marketing solution by AsliBoosts.">
+  <meta name="keywords" content="WhatsApp marketing, bulk sender, group extractor, auto reply bot, marketing software, business automation">
+  <link rel="canonical" href="https://asliboosts.shop/wa-sender">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300ff41;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2300cc33;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Cpath d='M50 15l8 24h25l-20 15 8 24-21-15-21 15 8-24-20-15h25z' fill='black'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 25%, #7c3aed 50%, #a855f7 75%, #c084fc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 32px 64px -12px rgba(124, 58, 237, 0.25);
+            border-color: #7c3aed;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #7c3aed;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulseGlow {
+            from {
+                box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            }
+            to {
+                box-shadow: 0 0 40px rgba(124, 58, 237, 0.8), 0 0 60px rgba(124, 58, 237, 0.4);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pricing-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #7c3aed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.15), transparent);
+            transition: left 0.6s;
+        }
+        
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 40px 80px -12px rgba(124, 58, 237, 0.35);
+        }
+        
+        .preview-container {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            height: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .preview-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .preview-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        /* Mobile Navigation Improvements */
+        @media (max-width: 1024px) {
+            .hidden.lg\\:block {
+                display: none !important;
+            }
+            
+            .lg\\:hidden {
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .text-4xl {
+                font-size: 1.75rem;
+                line-height: 2.25rem;
+            }
+            
+            .text-5xl, .text-6xl {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            
+            .preview-container {
+                max-width: 100%;
+                height: 160px;
+            }
+            
+            .grid-cols-2, .md\\:grid-cols-2, .lg\\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .py-24 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .px-4 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .max-w-7xl {
+                max-width: 100%;
+            }
+            
+            .space-x-4 > * + * {
+                margin-left: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .text-4xl {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            
+            .text-5xl, .text-6xl {
+                font-size: 1.75rem;
+                line-height: 2.25rem;
+            }
+            
+            .preview-container {
+                height: 140px;
+            }
+            
+            .px-4 {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .space-x-4 > * + * {
+                margin-left: 0.5rem;
+            }
+            
+            .text-sm {
+                font-size: 0.75rem;
+            }
+            
+            .h-20 {
+                height: 4rem;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            .w-12.h-12 {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            
+            .space-x-4 > * + * {
+                margin-left: 0.25rem;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-white"><!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+     <div class="flex items-center">
+      <div class="flex-shrink-0 flex items-center">
+       <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mr-3">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+       <h1 class="text-2xl font-bold"><span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Asli</span> <span class="text-gray-800">Boosts</span></h1>
+      </div>
+     </div>
+     <div class="hidden lg:block">
+      <div class="ml-10 flex items-baseline space-x-4"><a href="https://asliboosts.shop/" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Home</a> <a href="https://asliboosts.shop/services" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Services</a> <a href="https://asliboosts.shop/add-service" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Add Service</a> <a href="https://asliboosts.shop/social-media" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Social Media</a> <a href="https://asliboosts.shop/reviews" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Reviews</a> <a href="https://asliboosts.shop/contact" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50">Contact</a>
+      </div>
+     </div>
+     <div class="lg:hidden"><button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none p-2">
+       <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div>
+   </div><!-- Mobile menu -->
+   <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-lg">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="https://asliboosts.shop/" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Home</a> <a href="https://asliboosts.shop/services" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Services</a> <a href="https://asliboosts.shop/add-service" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Add Service</a> <a href="https://asliboosts.shop/social-media" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Social Media</a> <a href="https://asliboosts.shop/reviews" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Reviews</a> <a href="https://asliboosts.shop/contact" class="text-gray-700 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section class="hero-gradient min-h-full pt-20 relative">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+    <div class="text-center">
+     <div class="w-20 h-20 bg-white bg-opacity-20 rounded-3xl flex items-center justify-center mx-auto mb-8 pulse-glow">
+      <svg class="w-10 h-10 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106" />
+      </svg>
+     </div>
+     <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full border border-white mb-6"><span class="text-white font-semibold text-sm">🚀 Official AsliBoosts Release</span>
+     </div>
+     <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 fade-in">💬 <span class="text-white">WA Sender</span></h1>
+     <p class="text-lg md:text-xl lg:text-2xl text-white mb-4 leading-relaxed fade-in fade-in-delay-1 max-w-4xl mx-auto font-semibold">WhatsApp Marketing Software (v3.7.0)</p>
+     <div class="glass-card rounded-2xl p-8 max-w-4xl mx-auto fade-in fade-in-delay-2">
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">Take your marketing to the next level with <strong class="text-purple-600">WA Sender</strong>, the all-in-one WhatsApp Marketing Software designed for businesses, agencies, and resellers to reach thousands of customers instantly.</p>
+      <p class="text-base text-gray-600">Whether you want to send bulk messages, extract group numbers, or automate replies — WA Sender makes it effortless.</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Key Features Section -->
+  <section class="py-24 bg-gray-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20">
+     <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">⚡ <span class="text-purple-600">Key Features</span></h2>
+     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Advanced automation tools for professional WhatsApp marketing</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-black" fill="currentColor" viewbox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /> <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">📤 Bulk WhatsApp Sender</h3>
+      <p class="text-gray-600 leading-relaxed">Send personalized messages to unlimited contacts automatically with smart delivery controls.</p>
+     </div>
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">👥 Group Sender</h3>
+      <p class="text-gray-600 leading-relaxed">Share updates, offers, and media directly to multiple WhatsApp groups simultaneously.</p>
+     </div>
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">🤖 Auto Reply Bot</h3>
+      <p class="text-gray-600 leading-relaxed">Set smart auto-responses to handle customer chats 24/7 with intelligent triggers.</p>
+     </div>
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-black" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">🖥️ Modern Dashboard</h3>
+      <p class="text-gray-600 leading-relaxed">Sleek and easy interface with real-time progress tracking and analytics.</p>
+     </div>
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">💬 Multi-Media Support</h3>
+      <p class="text-gray-600 leading-relaxed">Supports Text, Image, Video, and Links with advanced formatting options.</p>
+     </div>
+     <div class="feature-card rounded-2xl p-8 text-center h-full">
+      <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h3.5a3.5 3.5 0 100-7H11V3.414l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 3.414V6H5.5A3.5 3.5 0 002 9.5z" clip-rule="evenodd" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">🪟 Windows Software</h3>
+      <p class="text-gray-600 leading-relaxed">Simple installation, lightweight, and runs smoothly on all Windows systems.</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Pricing Section -->
+  <section class="py-24 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20">
+     <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">💰 <span class="text-purple-600">Pricing Plans</span></h2>
+     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the perfect plan for your marketing needs</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+     <div class="pricing-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-xl font-black text-white">💼</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Basic</h3>
+      <div class="mb-6"><span class="text-3xl font-black text-purple-600">200</span> <span class="text-gray-600 ml-1">PKR</span>
+      </div>
+      <p class="text-gray-600 mb-6">15 Days Access</p>
+      <div class="text-sm text-gray-500">
+       Perfect for testing
+      </div>
+     </div>
+     <div class="pricing-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-xl font-black text-white">💎</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Standard</h3>
+      <div class="mb-6"><span class="text-3xl font-black text-purple-600">500</span> <span class="text-gray-600 ml-1">PKR</span>
+      </div>
+      <p class="text-gray-600 mb-6">2 Months Access</p>
+      <div class="text-sm text-gray-500">
+       Most popular choice
+      </div>
+     </div>
+     <div class="pricing-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-xl font-black text-black">🚀</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Pro</h3>
+      <div class="mb-6"><span class="text-3xl font-black text-purple-600">1000</span> <span class="text-gray-600 ml-1">PKR</span>
+      </div>
+      <p class="text-gray-600 mb-6">5 Months Access</p>
+      <div class="text-sm text-gray-500">
+       Best value for money
+      </div>
+     </div>
+     <div class="pricing-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-xl font-black text-black">♾️</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Lifetime</h3>
+      <div class="mb-6"><span class="text-3xl font-black text-purple-600">2000</span> <span class="text-gray-600 ml-1">PKR</span>
+      </div>
+      <p class="text-gray-600 mb-6">Forever Access</p>
+      <div class="text-sm text-gray-500">
+       Ultimate solution
+      </div>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+     <div class="glass-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-2xl">🎁</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Free Demo</h3>
+      <p class="text-gray-600">1–2 days trial available for new users to test all features.</p>
+     </div>
+     <div class="glass-card rounded-2xl p-8 text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-2xl">🔑</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Keygen Activation</h3>
+      <p class="text-gray-600">Full version key available for <strong class="text-purple-600">4999 PKR</strong> only.</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Product Preview Section -->
+  <section class="py-24 bg-gray-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20">
+     <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">🖼️ <span class="text-purple-600">Product Preview</span></h2>
+     <p class="text-xl text-gray-600 max-w-3xl mx-auto">See WA Sender in action with these interface screenshots</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/1awjubuDi8nqLhGjxlXzovRzzMx6ptWdZ/preview" allow="autoplay"></iframe>
+     </div>
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/1U68Cd2z3nG9jKGfB7GfICjRSEiXEtSpL/preview" allow="autoplay"></iframe>
+     </div>
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/1Y9ZIt8Y_82RJnFpiAPw9yUwk1MJ7Z8-7/preview" allow="autoplay"></iframe>
+     </div>
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/1Ck_8__4wduWYrlepZRffdAdOf8bBb40Y/preview" allow="autoplay"></iframe>
+     </div>
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/19V1PzpSx6S_FWrPaxSiJVl-sUQwwAkK9/preview" allow="autoplay"></iframe>
+     </div>
+     <div class="preview-container"><iframe src="https://drive.google.com/file/d/1LAJILtDhDroLzyzu3Yoi_sf6qxhvDZcG/preview" allow="autoplay"></iframe>
+     </div>
+    </div>
+    <div class="text-center mt-12">
+     <p class="text-lg text-gray-600 mb-8">Experience the power of professional WhatsApp marketing automation with our intuitive interface and advanced features.</p>
+    </div>
+   </div>
+  </section><!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8">Ready to Dominate WhatsApp Marketing?</h2>
+    <p class="text-xl text-white text-opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed">Join thousands of businesses already using WA Sender to automate their WhatsApp marketing and boost their sales exponentially.</p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center"><button onclick="orderNow()" class="btn-primary px-10 py-5 rounded-xl text-xl inline-flex items-center justify-center text-white font-bold">
+      <svg class="w-7 h-7 mr-3" fill="currentColor" viewbox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+      </svg> Order Now </button> <button onclick="contactSupport()" class="btn-secondary px-10 py-5 rounded-xl text-xl inline-flex items-center justify-center text-purple-600 font-bold hover:text-white">
+      <svg class="w-7 h-7 mr-3" fill="currentColor" viewbox="0 0 20 20"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" />
+      </svg> Contact Support </button>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-700 text-white py-16">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+     <div class="col-span-1 md:col-span-2">
+      <div class="flex items-center mb-6">
+       <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mr-3 pulse-glow">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+       <h3 class="text-2xl font-bold"><span class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Asli</span> <span>Boosts</span></h3>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Professional WhatsApp marketing automation software for businesses. Dominate your market with WA Sender's advanced features.</p>
+      <p class="text-gray-400 text-sm">"Real Software, Real Results."</p>
+     </div>
+     <div>
+      <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+      <ul class="space-y-3">
+       <li><a href="https://asliboosts.shop/" class="text-gray-300 hover:text-purple-400 transition duration-300">Home</a></li>
+       <li><a href="https://asliboosts.shop/services" class="text-gray-300 hover:text-purple-400 transition duration-300">Services</a></li>
+       <li><a href="https://asliboosts.shop/add-service" class="text-gray-300 hover:text-purple-400 transition duration-300">Add Your Service</a></li>
+       <li><a href="https://asliboosts.shop/social-media" class="text-gray-300 hover:text-purple-400 transition duration-300">Social Media Service</a></li>
+       <li><a href="https://asliboosts.shop/reviews" class="text-gray-300 hover:text-purple-400 transition duration-300">Reviews</a></li>
+       <li><a href="https://asliboosts.shop/contact" class="text-gray-300 hover:text-purple-400 transition duration-300">Contact</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="text-lg font-semibold mb-6 text-white">Connect With Us</h4>
+      <div class="flex space-x-4 mb-6"><a href="https://wa.me/923010269131" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition duration-300">
+        <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106" />
+        </svg></a> <a href="mailto:asliboosts@gmail.com" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition duration-300">
+        <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /> <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg></a>
+      </div>
+      <p class="text-gray-400 text-sm">asliboosts@gmail.com</p>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 mt-12 pt-8">
+     <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm mb-4 md:mb-0">Copyright © 2025 Asli Boosts — WA Sender v3.7.0</p>
+      <div class="flex space-x-6"><span class="text-gray-400 text-sm">💬 WhatsApp Marketing Software</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer><!-- WhatsApp Floating Button -->
+  <div class="fixed bottom-6 right-6 z-50"><a href="https://wa.me/923010269131" target="_blank" rel="noopener noreferrer" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 pulse-glow">
+    <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106" />
+    </svg></a>
+  </div>
+  <script>
+        function orderNow() {
+            const message = "Hello Asli Boosts 👋 I'm interested in purchasing WA Sender - WhatsApp Marketing Software. I would like to know more about the pricing plans and get started with the software. Please provide me with the download link and activation details. Thank you!";
+            const whatsappUrl = `https://wa.me/923010269131?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        function contactSupport() {
+            const message = "Hello Asli Boosts Support 👋 I have some questions about WA Sender software. Could you please help me with technical support and provide more information about the features? Thank you!";
+            const whatsappUrl = `https://wa.me/923010269131?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'white';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998cffb5b7d0ce4a',t:'MTc2MjE4NDcyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

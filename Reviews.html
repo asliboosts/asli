@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐ Real Customer Reviews - AsliBoosts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .review-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .star-filled {
+            color: #fbbf24;
+        }
+        
+        .star-empty {
+            color: #d1d5db;
+        }
+        
+        .modal-overlay {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .star-rating .star {
+            cursor: pointer;
+            font-size: 24px;
+            color: #d1d5db;
+            transition: color 0.2s ease;
+        }
+        
+        .star-rating .star:hover,
+        .star-rating .star.active {
+            color: #fbbf24;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 16px;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-4 { animation-delay: 0.4s; }
+        .fade-in-delay-5 { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-gray-50"><!-- Reviews Section -->
+  <section class="py-16 bg-gray-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><!-- Header -->
+    <div class="text-center mb-12">
+     <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">⭐ Real Customer Reviews</h2>
+     <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">See what our customers say about our digital solutions and services</p><!-- Add Review Button --> <button onclick="openReviewModal()" class="btn-gradient px-8 py-4 rounded-xl text-white font-bold text-lg inline-flex items-center"> <span class="mr-2">➕</span> Add Your Review </button>
+    </div><!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"><!-- 5 Star Reviews -->
+     <div class="review-card rounded-2xl p-6 fade-in">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">AH</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Ahmed Hassan</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Ordered Business Management System for my restaurant in Lahore. Amazing software! Handles inventory, billing, and customer management perfectly. Installation was smooth and training was provided. Worth every penny!"</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-1">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">SF</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Sana Fatima</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Got WA Sender for my clothing business. Sent 5000 bulk messages in minutes! Group number extractor works perfectly. Sales increased by 40% in first month. Best WhatsApp marketing tool!"</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-2">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">MK</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Muhammad Kamran</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Website Development service is outstanding! Created a beautiful e-commerce site for my electronics shop. Mobile responsive, fast loading, and includes hosting. Professional work at affordable price!"</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-3">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">ZA</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Zainab Ali</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Canva Pro access is genuine and working perfectly! All premium features unlocked. Using it for my graphic design business. Much cheaper than official subscription. Highly recommended!"</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-4">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">UR</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Usman Rashid</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Logo Design Pack exceeded expectations! Got 5 unique concepts, unlimited revisions, and brand guidelines. Designer understood my vision perfectly. Professional quality at reasonable price!"</p>
+     </div><!-- 4 Star Reviews -->
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-5">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">FK</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Fatima Khan</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-empty">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"IDM lifetime access works great! Download speeds are excellent. Installation took some time and needed technical support. Overall good value for money but setup could be easier."</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">AS</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Ali Shah</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-empty">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Ad creation service for my startup was good. Created 3 video ads in Urdu and English. Quality is professional but delivery took 5 days instead of promised 3 days. Results are satisfactory."</p>
+     </div>
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-1">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">MN</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Maria Noor</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-empty">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"LinkedIn Premium access is working fine. All features available including InMail credits. Account got suspended once but they provided replacement quickly. Good customer support."</p>
+     </div><!-- 3 Star Review -->
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-2">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">HM</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Hassan Malik</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-filled">★</span> <span class="star-empty">★</span> <span class="star-empty">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Windows + Office bundle installation was complicated. Needed multiple attempts and technical help. Software works but activation process was lengthy. Price is good but service needs improvement."</p>
+     </div><!-- 1 Star Review -->
+     <div class="review-card rounded-2xl p-6 fade-in fade-in-delay-3">
+      <div class="flex items-center mb-4">
+       <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold text-lg">SK</span>
+       </div>
+       <div>
+        <h4 class="font-bold text-slate-900">Saad Khan</h4>
+        <div class="flex mb-1"><span class="star-filled">★</span> <span class="star-empty">★</span> <span class="star-empty">★</span> <span class="star-empty">★</span> <span class="star-empty">★</span>
+        </div><span class="text-xs text-green-600 font-semibold">✅ Verified Purchase</span>
+       </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">"Netflix Premium account stopped working after 2 weeks. Customer support was slow to respond. Got replacement but it also had issues. Not reliable service. Would not recommend."</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="bg-slate-900 text-white py-16">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Company Info -->
+     <div class="lg:col-span-1">
+      <h3 class="text-2xl font-bold mb-4">Asli Boosts</h3>
+      <p class="text-gray-300 mb-4 leading-relaxed">Boost your digital life with real results. Trusted source for lifetime software, automation tools, and business solutions.</p>
+      <p class="text-blue-400 font-semibold text-lg mb-6">"Real Service, Real Trust."</p>
+      <div class="text-center lg:text-left">
+       <p class="text-xl font-bold text-blue-400">🚀 Boost Your Digital Life</p>
+      </div>
+     </div><!-- Quick Links -->
+     <div>
+      <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+      <ul class="space-y-3">
+       <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+       <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+       <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Add Your Service</a></li>
+       <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Social Media Service</a></li>
+       <li><a href="#" class="text-white font-semibold">Reviews</a></li>
+       <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+      </ul>
+     </div><!-- Connect With Us -->
+     <div>
+      <h4 class="text-lg font-semibold mb-6">Connect With Us</h4>
+      <div class="space-y-3">
+       <div class="flex items-center">
+        <svg class="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewbox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /> <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg><span class="text-gray-300">asliboosts@gmail.com</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-slate-800 mt-12 pt-8 text-center">
+     <p class="text-gray-400">Copyright © 2025 Asli Boosts — "Real Service, Real Trust."</p>
+    </div>
+   </div>
+  </footer><!-- WhatsApp Floating Button --> <a href="https://wa.me/923010269131" target="_blank" rel="noopener noreferrer" class="whatsapp-float"> <i>💬</i> </a> <!-- Review Form Modal -->
+  <div id="reviewModal" class="fixed inset-0 z-50 hidden">
+   <div class="modal-overlay absolute inset-0" onclick="closeReviewModal()"></div>
+   <div class="flex items-center justify-center min-h-full p-4">
+    <div class="modal-content p-8 max-w-lg w-full relative max-h-full overflow-y-auto"><button onclick="closeReviewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg></button>
+     <div class="text-center mb-6">
+      <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900 mb-2">Submit Your Review</h3>
+      <p class="text-gray-600">Share your experience with our services</p>
+     </div>
+     <form id="reviewForm" onsubmit="submitReview(event)">
+      <div class="mb-6"><label for="orderId" class="block text-sm font-semibold text-gray-700 mb-2">Order ID *</label> <input type="text" id="orderId" name="orderId" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors" placeholder="Enter your order ID">
+       <p class="text-xs text-gray-500 mt-2">You can find your order ID in the confirmation message</p>
+      </div>
+      <div class="mb-6"><label for="reviewerName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label> <input type="text" id="reviewerName" name="reviewerName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors" placeholder="Enter your full name">
+      </div>
+      <div class="mb-6"><label class="block text-sm font-semibold text-gray-700 mb-3">Star Rating *</label>
+       <div class="star-rating" id="starRating"><span class="star" data-rating="1">★</span> <span class="star" data-rating="2">★</span> <span class="star" data-rating="3">★</span> <span class="star" data-rating="4">★</span> <span class="star" data-rating="5">★</span>
+       </div><input type="hidden" id="selectedRating" name="rating" required>
+       <p class="text-xs text-gray-500 mt-2">Click on stars to rate our service</p>
+      </div>
+      <div class="mb-6"><label for="reviewText" class="block text-sm font-semibold text-gray-700 mb-2">Your Review *</label> <textarea id="reviewText" name="reviewText" required rows="4" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors resize-none" placeholder="Write your detailed review about our service..."></textarea>
+       <p class="text-xs text-gray-500 mt-2">Please share your honest experience (minimum 20 characters)</p>
+      </div><button type="submit" class="w-full btn-gradient py-3 rounded-lg text-white font-semibold"> Submit Review </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <script>
+        let selectedRating = 0;
+        
+        // Review Modal Functions
+        function openReviewModal() {
+            document.getElementById('reviewModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeReviewModal() {
+            document.getElementById('reviewModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('reviewForm').reset();
+            resetStarRating();
+        }
+        
+        // Star Rating System
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating .star');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    selectedRating = parseInt(this.dataset.rating);
+                    document.getElementById('selectedRating').value = selectedRating;
+                    updateStarDisplay();
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const hoverRating = parseInt(this.dataset.rating);
+                    highlightStars(hoverRating);
+                });
+            });
+            
+            document.getElementById('starRating').addEventListener('mouseleave', function() {
+                updateStarDisplay();
+            });
+        });
+        
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('.star-rating .star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+        
+        function updateStarDisplay() {
+            highlightStars(selectedRating);
+        }
+        
+        function resetStarRating() {
+            selectedRating = 0;
+            document.getElementById('selectedRating').value = '';
+            updateStarDisplay();
+        }
+        
+        // Submit Review
+        function submitReview(event) {
+            event.preventDefault();
+            
+            const orderId = document.getElementById('orderId').value.trim();
+            const name = document.getElementById('reviewerName').value.trim();
+            const rating = document.getElementById('selectedRating').value;
+            const reviewText = document.getElementById('reviewText').value.trim();
+            
+            // Validation
+            if (orderId !== '0301') {
+                showFieldError('orderId', 'Invalid Order ID. Please check and try again.');
+                return;
+            }
+            
+            if (!name) {
+                showFieldError('reviewerName', 'Please enter your name');
+                return;
+            }
+            
+            if (!rating || rating < 1 || rating > 5) {
+                showError('Please select a star rating');
+                return;
+            }
+            
+            if (!reviewText || reviewText.length < 20) {
+                showFieldError('reviewText', 'Please write at least 20 characters');
+                return;
+            }
+            
+            // Create WhatsApp message
+            const starText = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
+            const message = `🌟 *Review Submission - AsliBoosts*
+
+👤 *Customer Name:* ${name}
+📋 *Order ID:* ${orderId}
+⭐ *Rating:* ${starText} (${rating}/5 stars)
+📝 *Review:*
+${reviewText}
+
+---
+Hi, I want to submit a review for my order. Please add this review to your website.
+
+Thank you! 🙏`;
+            
+            // Open WhatsApp
+            const whatsappUrl = `https://wa.me/923010269131?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Close modal and show success
+            closeReviewModal();
+            showSuccessMessage();
+        }
+        
+        function showFieldError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            field.style.borderColor = '#ef4444';
+            field.style.backgroundColor = '#fef2f2';
+            
+            // Remove existing error
+            const existingError = field.parentNode.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Add error message
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message text-red-500 text-sm mt-1';
+            errorMsg.textContent = message;
+            field.parentNode.appendChild(errorMsg);
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                field.style.borderColor = '#d1d5db';
+                field.style.backgroundColor = 'white';
+                if (errorMsg.parentNode) {
+                    errorMsg.remove();
+                }
+            }, 3000);
+        }
+        
+        function showError(message) {
+            // Create temporary error message at top of form
+            const form = document.getElementById('reviewForm');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4';
+            errorDiv.textContent = message;
+            form.insertBefore(errorDiv, form.firstChild);
+            
+            setTimeout(() => {
+                if (errorDiv.parentNode) {
+                    errorDiv.remove();
+                }
+            }, 3000);
+        }
+        
+        function showSuccessMessage() {
+            // Create success overlay
+            const successDiv = document.createElement('div');
+            successDiv.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50';
+            successDiv.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Review Submitted!</h3>
+                    <p class="text-gray-600 mb-4">Thank you for your feedback. Your review has been sent for approval.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="btn-gradient px-6 py-2 rounded-lg text-white font-semibold">
+                        Close
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(successDiv);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (successDiv.parentNode) {
+                    successDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                if (!document.getElementById('reviewModal').classList.contains('hidden')) {
+                    closeReviewModal();
+                }
+            }
+        });
+        
+        // Escape key to close modals
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!document.getElementById('reviewModal').classList.contains('hidden')) {
+                    closeReviewModal();
+                }
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9992167201bad04d',t:'MTc2MjIzODA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
